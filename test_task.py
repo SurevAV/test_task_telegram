@@ -3,7 +3,7 @@ from aiogram import Bot, Dispatcher, executor, types
 # видео файл один и отправлятся в двух разных меню
 
 # сюда имя бота
-bot = Bot("6039886909:AAE0OP7R_6XG2xZv2uTf3WO4bZjUG1wJgvo")
+bot = Bot("")
 
 dp = Dispatcher(bot)
 
@@ -76,7 +76,7 @@ async def callback(call):
     global dict_users
     user_id = call.message.chat.id
 
-    if dict_users.get(user_id) == None:
+    if not dict_users.get(user_id):
         dict_users[user_id] = class_user()
     user = dict_users[user_id]
 
